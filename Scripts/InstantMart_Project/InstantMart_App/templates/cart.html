@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add To Cart</title>
+    <link rel="icon" type="image/x-icon" href="../static/media/logo.png">
+    <link rel="stylesheet" href="../static/css/cart.css">
+    <link rel="stylesheet" href="../static/css/alert.css">
+</head>
+
+<body>
+    {%include 'navbar.html'%}
+    {% for message in messages %}
+    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+        <strong class="alert_msg">{{ message }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span class="close_icon" aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <div class="container">
+        <div class="top_indicator">
+            <h2>Your Cart</h2>
+            <div class="left_indicator">
+                <div class="ind_one">
+                    <h5>Total Items</h5>
+                    <p>{{num_item}}</p>
+                </div>
+                {% if num_item != 0 %}
+                <hr style="border: 1px solid lightgray; height: 3rem; position: relative; bottom: 5px;">
+                <div class="ind_two">
+                    <h5>Total Price</h5>
+                    <p>{{total_price}}</p>
+                </div>
+                <hr style="border: 1px solid lightgray; height: 3rem; position: relative; bottom: 5px;">
+                {% endif %}
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Quantity</th>
+                    <th>Sub-Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in cl%}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><img src="{{ i.product.product_img.url }}"
+                            style="border: 2px solid lightgray; border-radius: 10px;" width="100px" height="100px"
+                            alt="{{ i.product.name }}"></td>
+                    <td>{{ i.product.product_name }}</td>
+                    <td>{{ i.product.product_currency }}{{ i.product.product_price }}</td>
+                    <td>{{ i.product.product_quantity }}{{ i.product.product_unit }}</td>
+                    <td>
+                        <div class="quntity_btn">
+                            <a href="de_cart_item/{{i.product.id}}" class="de_btn"><strong>-</strong></a>
+                            <h5>{{i.quantity}}</h5>
+                            <a href="in_cart_item/{{i.product.id}}" class="in_btn">+</a>
+                        </div>
+                    </td>
+                    <td>{{ i.product.product_currency }}{{ i.subtotalprice }}</td>
+                    <td><a href="delete/{{i.id}}"><button class="del_btn"
+                                title="Remove - {{i.product.product_name}}">Remove</button></a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="8" style="font-size: larger; font-weight: 600;">No items in cart.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if num_item != 0 %}
+        <hr>
+        <div class="payment_btn">
+            <div id="paypal-button-container"></div>
+        </div>
+        <br>
+        <small style="text-align: center; position: relative; left: 32.5rem;">---------- Cart End Here ----------</small>
+        {% endif %}
+    </div>
+    <footer
+        style="    max-height: 2rem;background-color: lightgray;position: fixed;bottom: 0;left: 0;right: 0;text-align: center;margin: 0;padding: 10px;font-weight: 600;">
+        <small>Copyright &copy; 2024 INSTANTMART || Designed By Suyash Sable || </small>
+    </footer>
+    <script src="../static/js/script.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AV37gBWCtplD6KFT2UWSEo8J10sBSxIUg8PPmpHb6XYegyHDYO62kKWn5grx2T-VODX8Vc_wQrMP-T54&currency=USD"></script>
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '{{ total_price }}'
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    window.location.href = "{% url 'InstantMart_App:payment_success' %}?paymentId=" + data.orderID + "&PayerID=" + data.payerID;
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+
+</html>

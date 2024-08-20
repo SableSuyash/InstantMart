@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category_list</title>
+    <link rel="icon" type="image/x-icon" href="../static/media/logo.png">
+</head>
+<body>
+{%load static%}
+{%include 'navbar.html'%}
+<link rel="stylesheet" href="../static/css/alert.css">
+<link rel="stylesheet" href="{%static 'css/category_list.css'%}">
+    <div class="category_container">
+        <div class="grid1">
+            <div class="cate_list">
+                <a href="/category">
+                    <div class="all_catelist">
+                        <img src="../static/media/cate_list_all.png" alt="All Products LOGO">
+                        <p>All Products</p>
+                    </div>
+                </a>
+                <hr id="hr1">
+                {%for i in Cate%}
+                <a href="/filter/{{i.id}}">
+                    <div class="all_cate">
+                        <img src="{{ i.category_img.url }}" width="60px" height="60px" alt="All Products LOGO">
+                        <p>{{ i.category_name }}</p>
+                    </div>
+                </a>
+                {%endfor%}
+            </div>
+        </div>
+        <div class="main">
+            {%block body%}
+    
+            {%endblock%}
+        </div>
+        <script src="../static/js/script.js"></script>
+</body>
+</html>

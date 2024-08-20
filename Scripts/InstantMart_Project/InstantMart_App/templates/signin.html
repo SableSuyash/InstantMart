@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="icon" type="image/x-icon" href="../static/media/logo.png">
+    <link rel="stylesheet" href="../static/css/signin.css">
+    <link rel="stylesheet" href="../static/css/alert.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    {%include 'navbar.html'%}
+    {% for message in messages %}
+    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+        <strong class="alert_msg">{{ message }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span class="close_icon" aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+<div class="signin-container">
+    <form action="/signin" method="post" class="signin_form">
+        {%csrf_token%}
+        <table class="signin-table">
+            <tr>
+                <th><label for="username" class="signin_form_label signin_label">Username</label></th>
+            </tr>
+            <tr>
+                <td><input class="signin_form_input signin_input" type="text" id="username" name="username" placeholder="Enter your Username" required></td>
+            </tr>
+            <tr>
+                <th><label for="password" class="signin_form_label signin_label">Password</label></th>
+            </tr>
+            <tr>
+                <td><input class="signin_form_input signin_input" type="password" id="password" name="password" placeholder="Enter Password" required></td>
+            </tr>
+            <tr>
+                <td><input class="btn signin-btn" type="submit" value="Sign In"></td>
+                <td><button type="button" class="btn signup-btn"><a href="/signup" target="_blank">Sign Up</a></button></td>
+            </tr>
+        </table>
+    </form>
+    <div class="left-side">
+        <div class="top">
+            <img src="../static/media/logo.png" width="250px" height="250px" alt="logo">
+        </div>
+        <div class="bottom">
+            <h1>Sign In</h1>
+            <p>Login into Your Account</p>
+        </div>
+    </div>
+</div>
+<script src="../static/js/script.js"></script>
+</body>
+</html>

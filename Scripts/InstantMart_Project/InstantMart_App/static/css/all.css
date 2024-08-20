@@ -1,0 +1,133 @@
+/* All */
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+/* All End */
+
+
+
+
+/* Navbar */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    height: 60px !important;
+    background-color: rgb(255 155 32) !important;
+    border: 0px !important;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.334) !important;
+    color: #fff !important;
+    padding: 5px 4rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 16pt !important;
+    font-weight: 600 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.nav_link{
+    padding: 0px 3px !important;
+    text-align: center !important;
+    align-content: center !important;
+}
+
+.nav_link:hover{
+    color: #000000 !important;
+    background-color: #ffffff5e !important;
+    border-top: 3px solid white !important;
+    text-align: center !important;
+    align-content: center !important;
+    height: 4.2rem !important;
+    width: auto !important;
+    box-shadow: 0px 0px 2px #00000069 inset !important;
+}
+
+.navbar a {
+    color: #fff !important;
+}
+.logo>a{
+    position: relative !important;
+    bottom: 2px !important;
+    font-weight: 900 !important;
+    font-size: 30pt !important;
+    border: 0 !important;
+    color: #fff !important;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.193) !important;
+}
+
+.login_name>a {
+    color: #000000 !important;
+}
+.login_name>a:hover{
+    border-bottom: 2px solid #fff !important;
+}
+
+
+.search {
+    width: 23rem !important;
+    height: 2.5rem !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border: 0 !important;
+    border-radius: 50px 0px 0px 50px !important;
+    outline: 0 !important;
+    font-size: medium !important;
+}
+
+.search_input_img {
+    display: flex !important;
+    align-items: center !important;
+    outline: 0 !important;
+}
+
+.search_input_img:hover {
+    outline: rgba(68, 102, 255, 0.897) solid 1px !important;
+    border: 0 !important;
+    border-radius: 50px !important;
+}
+
+.search_icon {
+    border: 0 !important;
+    border-radius: 0px 50px 50px 0px !important;
+    width: 5rem !important;
+    height: 2.6rem !important;
+    cursor:pointer !important;
+}
+
+.search_icon:hover {
+    border: 1px solid black !important;
+}
+
+.cart_logo {
+    position: relative !important;
+    top: 3px !important;
+}
+
+/* Navbar End */
+
+
+/* Button */
+
+
+
+
+
+/* Button End */
+
+
+
+
+
+
+
+
+
+
+

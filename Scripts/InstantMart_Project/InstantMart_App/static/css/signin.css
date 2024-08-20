@@ -1,0 +1,163 @@
+/* Sign In */
+.signin-container {
+    margin: 0;
+    padding: 7.5rem 2rem 0px 2rem;
+    height: calc(100vh - 70px);
+    box-sizing: border-box;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.signin-table {
+    border-spacing: 0px 40px;
+    position: relative;
+    left: 2.5rem;
+    bottom: 1rem;
+}
+
+
+.signin_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35rem;
+    height: 70vh;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: 0;
+    border-radius: 50px 0px 50px 50px;
+    border: 0;
+    background-color: #0066a915;
+    text-align: left;
+    position: relative;
+    right: -80px;
+}
+.signin_form:hover {
+    box-shadow: -6px 6px 4px rgb(211, 211, 211), 1px -1px 2px #0000002e;
+}
+
+
+.left-side-singin {
+    width: 40rem;
+    height: 30rem;
+    gap: 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+.signin_label {
+    font-size: 20pt;
+    position: relative;
+    top: 35px;
+}
+.signin_label:hover {
+    border-bottom: 2px solid rgb(47, 151, 255);
+}
+
+
+.signin_form_input {
+    width: 20rem;
+    height: 3rem;
+    padding: 0px 10px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    outline: 0;
+    font-size: 13pt;
+    font-family: "Roboto", sans-serif;
+}
+.signin_form_input:focus {
+    outline: rgba(68, 68, 255, 0.444) solid 2px;
+}
+
+
+.left-side {
+    width: 40rem;
+    height: 30rem;
+    gap: 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.top {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    color: #ffae00;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-size: xx-large;
+    font-style: normal;
+    text-align: center;
+}
+/* Sign In End */
+
+
+/* Button */
+
+.btn {
+    width: 5.5rem;
+    height: 3rem;
+    border: 0;
+    background-color: lightgray;
+    border-radius: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.signup-btn {
+    color: black;
+    background: lightgrey;
+    font-size: 12pt;
+    font-weight: 600;
+    position: relative;
+    right: 5rem;
+}
+.signup-btn:hover {
+    background: rgb(184, 184, 184);
+}
+
+
+.signin-btn {
+    color: #fff;
+    background: rgb(47, 151, 255);
+    font-size: 12pt;
+    font-weight: 600;
+    position: relative;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.signin-btn:hover{
+    background: rgb(44, 141, 238);
+}
+
+/* Button End */
+
+

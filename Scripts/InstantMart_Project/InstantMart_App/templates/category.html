@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <link rel="icon" type="image/x-icon" href="../static/media/logo.png">
+    <link rel="stylesheet" href="../static/css/category.css">
+    <link rel="stylesheet" href="../static/css/alert.css">
+</head>
+<body>
+    {%extends 'category_list.html'%}
+    {%load static%}
+    {%block body%}
+    {% for message in messages %}
+    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+    <strong class="alert_msg">{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span class="close_icon" aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {% endfor %}
+        </div>
+        <div class="grid2">
+            <div class="product_list">
+                <h1 id="all_products_heading">All Products</h1>
+                {%for i in Card%}
+                <div class="card" title="{{i.product_name}}">
+                    <img class="product_img" src="{{ i.product_img.url }}" width="120" height="150" alt="{{ i.product_name }}">
+                    <br>
+                    <h1 class="pro_info pro_font product_header">{{ i.product_name }}</h1>
+                    <p class="pro_info pro_font product_quantity">{{ i.product_quantity }}<span class="product_unit">{{ i.product_unit }}</span></p>
+                    <br>
+                    <h2 class="pro_font price_div"><span class="product_currency">{{ i.product_currency }}</span>{{ i.product_price }}</h2>
+                    <a href="{% url 'InstantMart_App:add_to_cart' i.id %}" title="Add {{i.product_name}}"><button class="add_to_card_btn">Add to Cart</button></a>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+<script src="../static/js/script.js"></script>
+{%endblock%}
+</body>
+</html>

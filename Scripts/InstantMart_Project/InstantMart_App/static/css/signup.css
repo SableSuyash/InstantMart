@@ -1,0 +1,161 @@
+/* Sign Up */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #85FFBD;
+    background-image: linear-gradient(180deg, #85FFBD 0%, #FFFB7D 100%);
+    height: 100vh;
+}
+.signup-container {
+    padding:2rem;
+    box-sizing: border-box;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: 0;
+    border-radius: 50px 0px 50px 50px;
+    border: 0;
+    background-color: #02020223;
+    width: 37rem;
+    height: 35rem;
+    text-align: left;
+    backdrop-filter: blur(10px);
+}
+
+.signup_table {
+    border-spacing: 10px 15px;
+}
+
+.left-side {
+    width: 40rem;
+    height: 30rem;
+    gap: 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.top {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    color: #ffae00;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-size: xx-large;
+    font-style: normal;
+    text-align: center;
+}
+
+.signup_form_input {
+    width: 13.5rem;
+    height: 2.5rem;
+    padding-left: 20px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    outline: 0;
+    font-size: 11pt;
+    font-family: "Roboto", sans-serif;
+}
+
+.signup_form_input:focus {
+    outline: rgba(68, 68, 255, 0.444) solid 2px;
+}
+
+.signup_form_label {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-size: 14pt;
+}
+
+/* Sign Up End */
+
+
+
+/* Button */
+
+.btn {
+    width: 5.5rem;
+    height: 3rem;
+    border: 0;
+    background-color: lightgray;
+    border-radius: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.signup-btn {
+    color: black;
+    background: lightgrey;
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+.signup-btn:hover {
+    background: rgb(184, 184, 184);
+}
+
+.register-btn {
+    color: #fff;
+    background: rgb(47, 151, 255);
+    font-size: 12pt;
+    font-weight: 600;
+    position: relative;
+    left: 6rem;
+    width: 20rem;
+    border: 0;
+    border-radius: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background: rgb(42, 137, 233);
+}
+
+.alr-signup-btn {
+    width: 9rem;
+    font-size: 13pt;
+    background-color: transparent;
+    text-decoration: black underline;
+    position: relative;
+    left: 12rem;
+}
+
+.alr-signup-btn:hover {
+    background-color: transparent;
+}
+
+/* Button End */
+
+
+
+
+
+

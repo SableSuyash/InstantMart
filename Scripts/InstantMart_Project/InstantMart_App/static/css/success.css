@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+}
+.text-center p>a{
+    text-decoration: none;
+    font-weight: 900;
+}
+.text-center p>a:hover{
+    color: blue;
+    text-decoration: underline;
+}

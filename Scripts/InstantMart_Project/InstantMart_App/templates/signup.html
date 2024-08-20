@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" type="image/x-icon" href="../static/media/logo.png">
+    <link rel="stylesheet" href="../static/css/signup.css">
+    <link rel="stylesheet" href="../static/css/alert.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- .lobster-regular {
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }-->
+</head>
+<body>
+{% for message in messages %}
+<div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+    <strong class="alert_msg">{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span class="close_icon" aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+<div class="signup-container">
+    <form action="/signup" method="post" class="signup_form">
+        {%csrf_token%}
+        <table class=" signup_table">
+            <tr>
+                <th><label for="username" class="signup_form_label">Username - </label></th>
+                <td><input class="signup_form_input " type="text" id="username" name="username" placeholder="Create a Username" required></td>
+            </tr>
+            <tr>
+                <th><label for="firstname" class="signup_form_label">First Name - </label></th>
+                <td><input class="signup_form_input " type="text" id="firstname" name="firstname" placeholder="Enter Your First Name" required></td>
+            </tr>
+            <tr>
+                <th><label for="lastname" class="signup_form_label">Last Name - </label></th>
+                <td><input class="signup_form_input " type="text" id="lastname" name="lastname" placeholder="Enter Your Last Name" required></td>
+            </tr>
+            <tr>
+                <th><label for="email" class="signup_form_label">Email - </label></th>
+                <td><input class="signup_form_input " type="email" id="email" name="email" placeholder="Enter Your Email Address" required></td>
+            </tr>
+            <!-- <tr>
+                <th><label for="contact" class="signup_form_label">Contact Number - </label></th>
+                <td><input class="signup_form_input" type="number" id="contact" name="contact" placeholder="Enter Your Contact Number" required></td>
+            </tr> -->
+            <tr>
+                <th><label for="password" class="signup_form_label">Password - </label></th>
+                <td><input class="signup_form_input " type="password" id="password" name="password" placeholder="Create a Password" required></td>
+            </tr>
+            <tr>
+                <th><label for="confirm-password" class="signup_form_label">Confirm Your Password - </label></th>
+                <td><input class="signup_form_input " type="password" id="confirm-password" name="confirm-password" placeholder="Re-Enter Your Password" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="btn register-btn" type="submit" title="Register" value="Register"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a class="btn alr-signup-btn" href="/signin">Already Signed up</a></td>
+            </tr>
+        </table>
+    </form>
+    <div class="left-side">
+        <div class="top">
+            <img src="../static/media/logo.png" width="250" height="250" alt="logo">
+        </div>
+        <div class="bottom">
+            <h1>Sign Up</h1>
+            <p>Create InstantMart Account</p>
+        </div>
+    </div>
+</div>
+<script src="../static/js/script.js"></script>
+</body>
+</html>
