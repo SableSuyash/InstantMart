@@ -57,6 +57,9 @@ def sign_up(request):
         if not username.isalnum():
             messages.error(request,"Username must be Alpha-Numeric!")
             return redirect('/signup')
+        if len(password)<=7:
+            messages.error(request,'Password Should be atleast 7 Character!')
+            return redirect(request,'/signup')
         # s.username=username
         # s.full_name=full_name
         # s.email=email
